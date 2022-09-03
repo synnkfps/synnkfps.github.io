@@ -1,0 +1,55 @@
+body {
+    text-rendering: optimizeLegibility;
+    color:white;
+
+    padding-left:10;
+    font-weight: 150;
+    font-family: 'Consolas', monospace;
+}
+
+h1 {
+    color: #fff;
+    text-rendering: optimizeSpeed;
+    font-weight: 150;
+    font-size: x-large;
+
+    font-family: 'Consolas', monospace;
+}
+
+hr {
+    border-color: grey;
+    margin-left: 0;
+    width: 60%;
+}
+
+h2 {
+    font-size:medium;
+}
+
+p {
+    padding-top: 0; 
+    margin-top: -5; 
+    font-size: 14;
+}
+
+a {
+    color: greenyellow;
+}
+
+li {
+    font-size: 13;
+    margin-top: -4;
+    margin-bottom: 1.2%;
+}
+
+br {
+    content: "";
+    margin: 2;
+    margin-top: 30;
+    display: block;
+    
+}
+
+canvas {
+    display: block;
+}
