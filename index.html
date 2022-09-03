@@ -1,0 +1,149 @@
+<html>
+    <title>Hackafast Website</title>
+    <body bgcolor="#0a0a0a"></body>
+    <style>
+        body {
+            text-rendering: optimizeLegibility;
+            color:white;
+
+            padding-left:10;
+            font-weight: 150;
+            font-family: 'Consolas', monospace;
+        }
+        
+        h1 {
+            color: #fff;
+            text-rendering: optimizeSpeed;
+            font-weight: 150;
+            font-size: x-large;
+
+            font-family: 'Consolas', monospace;
+        }
+
+        hr {
+            border-color: grey;
+            margin-left: 0;
+            width: 60%;
+        }
+
+        h2 {
+            font-size:medium;
+        }
+
+        p {
+            padding-top: 0; 
+            margin-top: -5; 
+            font-size: 14;
+        }
+
+        a {
+            color: greenyellow;
+        }
+        
+        li {
+            font-size: 13;
+            margin-top: -4;
+            margin-bottom: 1.2%;
+        }
+
+        br {
+            content: "";
+            margin: 2;
+            margin-top: 30;
+            display: block;
+            
+        }
+
+        canvas {
+            display: block;
+        }
+
+    </style>
+
+    <body>
+        
+        <h1>Welcome to SynnK's Website</h1>
+        
+        <hr>
+
+        <h2>About Me</h2>
+        <p>A simple guy who lives in Brazil and loves technologies and programming...</p>
+        <p>I also like playing shooter games (fortnite pro)</p>
+        
+        <br>
+
+        <h2>Games</h2>
+        <p>The games I enjoy most is Fortnite but there is plenty of other retro games and "new" games!</p>
+        
+        <br>
+        
+        <h2>Tech</h2>
+        <p>I'm currently interested in technologies such as:</p>
+        <li><span style="color:rgb(26, 145, 224)">Python</span>, JavaScript, Java</li>
+        <li><span style="color:aquamarine;">A</span>rtificial <span style="color:aquamarine;">I</span>ntelligence</li>
+        <li>Smart Algorithms</li>
+        <li>Reverse Engineering (in Java)</li>
+        <li>Cheating Software</li>
+        <p style="margin-top: 3">Among other related...</p>
+        
+        <hr>
+
+        <h2>Social Stuff</h2>
+        
+        <a>[</a>
+        <a href="https://github.com/synnkfps">GitHub</a>
+        <a>|</a>
+        <a href="https://www.youtube.com/channel/UC3f0_9bMoPLMJHxE_sCPDww">YouTube</a>
+        <a>|</a>
+        <a href="https://www.twitch.tv/synnkfps">Twitch</a> 
+        <a>]</a>
+        <a style="color:#0404; font-size:smaller;">(dont usually use)</a>
+        <br>
+        <hr>
+        <canvas></canvas>
+        <br>
+    </body>
+
+    <script>
+        // Initialising the canvas
+        var canvas = document.querySelector('canvas'),
+            ctx = canvas.getContext('2d');
+
+        // Setting the width and height of the canvas
+        canvas.width = 160;
+        canvas.height = 140;
+
+        // Setting up the letters
+        var letters = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+        letters = letters.split('');
+
+        // Setting up the columns
+        var fontSize = 10,
+            columns = canvas.width / fontSize;
+
+        // Setting up the drops
+        var drops = [];
+        for (var i = 0; i < columns; i++) {
+        drops[i] = 1;
+        }
+
+        // Setting up the draw function
+        function draw() {
+        ctx.fillStyle = 'rgba(0, 0, 0, .12)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            for (var i = 0; i < drops.length; i++) {
+                var text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillStyle = '#0e0';
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                drops[i]++;
+                if (drops[i] * fontSize > canvas.height && Math.random() > .96) {
+                    drops[i] =  Math.random();
+                }
+            }
+        }
+
+        // Loop the animation
+        setInterval(draw, 55);
+    </script>
+</html>
