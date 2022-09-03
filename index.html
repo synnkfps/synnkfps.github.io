@@ -1,64 +1,7 @@
 <html>
-    <title>Hackafast Website</title>
+    <title>SynnK Web Page</title>
     <body bgcolor="#0a0a0a"></body>
-    <style>
-        body {
-            text-rendering: optimizeLegibility;
-            color:white;
-
-            padding-left:10;
-            font-weight: 150;
-            font-family: 'Consolas', monospace;
-        }
-        
-        h1 {
-            color: #fff;
-            text-rendering: optimizeSpeed;
-            font-weight: 150;
-            font-size: x-large;
-
-            font-family: 'Consolas', monospace;
-        }
-
-        hr {
-            border-color: grey;
-            margin-left: 0;
-            width: 60%;
-        }
-
-        h2 {
-            font-size:medium;
-        }
-
-        p {
-            padding-top: 0; 
-            margin-top: -5; 
-            font-size: 14;
-        }
-
-        a {
-            color: greenyellow;
-        }
-        
-        li {
-            font-size: 13;
-            margin-top: -4;
-            margin-bottom: 1.2%;
-        }
-
-        br {
-            content: "";
-            margin: 2;
-            margin-top: 30;
-            display: block;
-            
-        }
-
-        canvas {
-            display: block;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 
     <body>
         
@@ -79,7 +22,7 @@
         
         <h2>Tech</h2>
         <p>I'm currently interested in technologies such as:</p>
-        <li><span style="color:rgb(26, 145, 224)">Python</span>, JavaScript, Java</li>
+        <li><a href="https://python.org/" style="color:rgb(26, 145, 224)">Python</a>, JavaScript, Java</li>
         <li><span style="color:aquamarine;">A</span>rtificial <span style="color:aquamarine;">I</span>ntelligence</li>
         <li>Smart Algorithms</li>
         <li>Reverse Engineering (in Java)</li>
@@ -105,15 +48,12 @@
     </body>
 
     <script>
-        // Initialising the canvas
         var canvas = document.querySelector('canvas'),
             ctx = canvas.getContext('2d');
 
-        // Setting the width and height of the canvas
         canvas.width = 160;
         canvas.height = 140;
 
-        // Setting up the letters
         var letters = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
         letters = letters.split('');
 
@@ -121,13 +61,11 @@
         var fontSize = 10,
             columns = canvas.width / fontSize;
 
-        // Setting up the drops
         var drops = [];
         for (var i = 0; i < columns; i++) {
         drops[i] = 1;
         }
 
-        // Setting up the draw function
         function draw() {
         ctx.fillStyle = 'rgba(0, 0, 0, .12)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -143,7 +81,6 @@
             }
         }
 
-        // Loop the animation
         setInterval(draw, 55);
     </script>
 </html>
